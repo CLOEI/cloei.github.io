@@ -1,7 +1,9 @@
 function Header() {
 	return (
-		<header>
-			<h1>Hello, I'm Cendy</h1>
+		<header className="py-10">
+			<h1 className="text-center font-bold text-xl lg:text-2xl 2xl:text-5xl">
+				Hi, I'm Cendy
+			</h1>
 		</header>
 	);
 }

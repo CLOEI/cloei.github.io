@@ -1,28 +1,31 @@
+import { useEffect, useState } from "react";
 import GUIContainer from "./GUIContainer";
 import GUIHeader from "./GUIHeader";
-import classes from "./styles/Aboutme.module.css";
+
 function Aboutme() {
+	const [img, setImg] = useState("");
+
+	useEffect(() => {
+		fetch("https://api.github.com/users/CLOEI")
+			.then((res) => res.json())
+			.then((data) => {
+				setImg(data.avatar_url);
+			});
+	}, []);
+
 	return (
-		<GUIContainer
-			style={{
-				position: "absolute",
-				height: "60%",
-				width: "80vw",
-				top: "50%",
-				right: "50%",
-				transform: "translate(50%, -50%)",
-				boxShadow: "0px 4px 4px 4px #00000040",
-				maxWidth: "500px",
-			}}
-		>
-			<GUIHeader text="About me" />
-			<div class={classes.container}>
-				<div className={classes.circle}>
-					<div></div>
-				</div>
-				<div className={classes.text}>
-					<p>Helloooooooooooooooooooooooo</p>
-				</div>
+		<GUIContainer class="flex flex-col absolute-center w-full h-2/3 bg-white shadow-xl sm:max-w-70v">
+			<GUIHeader title="About me" />
+			<div className="flex flex-col h-full justify-center items-center sm:flex-row md:flex-col overflow-auto py-2">
+				<img
+					class="w-full max-w-125p h-auto rounded-full"
+					src={img}
+					alt="User profile"
+				/>
+				<p class="p-5">
+					Hello as you may have guessed, my name is Cendy and I am still
+					improving my abilities and skills as a web developer
+				</p>
 			</div>
 		</GUIContainer>
 	);

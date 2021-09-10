@@ -1,9 +1,5 @@
 function GUIContainer(props) {
-	return (
-		<div className="GUIContainer" style={props.style}>
-			{props.children}
-		</div>
-	);
+	return <div className={props.class}>{props.children}</div>;
 }
 
 export default GUIContainer;

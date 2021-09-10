@@ -1,25 +1,23 @@
-import classes from "./styles/GUIToolList.module.css";
-
 function GUIToolList() {
 	return (
-		<div className={classes.container}>
-			<p>
-				<span>F</span>ile
+		<div className="flex text-sm bg-gray-200 font-bold">
+			<p className="p-1 cursor-pointer hover:bg-gray-300">
+				<span className="underline">F</span>ile
 			</p>
-			<p>
-				<span>E</span>dit
+			<p className="p-1 cursor-pointer hover:bg-gray-300">
+				<span className="underline">E</span>dit
 			</p>
-			<p>
-				<span>V</span>iew
+			<p className="p-1 cursor-pointer hover:bg-gray-300">
+				<span className="underline">V</span>iew
 			</p>
-			<p>
-				<span>G</span>o
+			<p className="p-1 cursor-pointer hover:bg-gray-300">
+				<span className="underline">G</span>o
 			</p>
-			<p>
-				<span>F</span>avorites
+			<p className="p-1 cursor-pointer hover:bg-gray-300">
+				<span className="underline">F</span>ile
 			</p>
-			<p>
-				<span>H</span>elp
+			<p className="p-1 cursor-pointer hover:bg-gray-300">
+				<span className="underline">H</span>elp
 			</p>
 		</div>
 	);
