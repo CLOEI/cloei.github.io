@@ -8,15 +8,12 @@ public_folder: /img
 collections:
   - name: "blog"
     label: "Blog"
-    folder: "content/blog"
+    folder: "src/pages/blog"
     create: true
     slug: "{{slug}}"
-    path: "{{title}}/index"
-    editor:
-      preview: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Tags", name: "tags", widget: "list" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "thumbnail", widget: "image" }
-      - { label: "Content", name: "content", widget: "markdown" }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list" }
