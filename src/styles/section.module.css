@@ -1,0 +1,20 @@
+.container {
+	margin-top: 1rem;
+}
+.section_switcher {
+	background-color: #374151;
+	height: 40px;
+	border-radius: 8px;
+	width: max-content;
+	margin: 0 auto 1rem auto;
+}
+
+.section {
+	display: inline-block;
+	width: 90px;
+	color: #f9fafb;
+	text-decoration: none;
+	text-align: center;
+	line-height: 40px;
+	cursor: pointer;
+}

@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;600&family=Montserrat:wght@600&display=swap");
+@import-normalize;
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #111827;
+	color: #f9fafb;
+}
+p {
+	font-family: "Hind Madurai", sans-serif;
+}
+h1 {
+	font-family: "Montserrat", sans-serif;
+}
