@@ -35,7 +35,7 @@ export default function Profile() {
 	const githubIcon = getImage(data.githubIcon);
 	return (
 		<div className={container}>
-			<h1>Cendy </h1>
+			<h1>Cendy</h1>
 			<div className={profile_container}>
 				<Link to="/">
 					<GatsbyImage

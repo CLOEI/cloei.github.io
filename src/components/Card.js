@@ -1,6 +1,6 @@
 import React from "react";
 import { format } from "date-fns";
-import { graphql, useStaticQuery, Link } from "gatsby";
+import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import {
 	container,
@@ -9,7 +9,7 @@ import {
 	card_title,
 } from "../styles/card.module.css";
 
-function Card({ title, imgSrc, slug, date, tags }) {
+function Card({ title, imgSrc, slug, date }) {
 	const imgData = getImage(imgSrc);
 	return (
 		<Link to={slug} className={container}>

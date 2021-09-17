@@ -6,7 +6,8 @@
 	border-radius: 8px;
 	min-height: 160px;
 	width: 95%;
-	margin: 0 auto;
+	margin: 1rem auto;
+	transition: all 0.2s;
 }
 .image {
 	flex-shrink: 0;
