@@ -7,6 +7,7 @@ import {
 	text_container,
 	image,
 	card_title,
+	image_class,
 } from "../styles/card.module.css";
 
 function Card({ title, imgSrc, slug, date }) {
@@ -18,7 +19,7 @@ function Card({ title, imgSrc, slug, date }) {
 				alt={title}
 				className={image}
 				objectPosition="10% 50%"
-				imgStyle={{ borderRadius: "8px 0 0 8px" }}
+				imgClassName={image_class}
 			/>
 			<div className={text_container}>
 				<p>{format(new Date(date), "MMM, d yyyy")}</p>

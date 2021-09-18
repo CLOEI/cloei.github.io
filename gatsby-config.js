@@ -1,8 +1,12 @@
 module.exports = {
 	siteMetadata: {
 		title: "Cendy",
+		description:
+			"Website portfolio dan blog kecil yang digunakan untuk mencatat progress",
+		author: "Cendy",
 	},
 	plugins: [
+		"gatsby-plugin-react-helmet",
 		{
 			resolve: "gatsby-source-filesystem",
 			options: {

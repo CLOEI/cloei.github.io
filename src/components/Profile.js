@@ -46,7 +46,7 @@ export default function Profile() {
 				</Link>
 				<div className={button_container}>
 					<div>
-						<a href="https://github.com/CLOEI" target="_blank">
+						<a href="https://github.com/CLOEI" target="_blank" rel="noreferrer">
 							<GatsbyImage image={githubIcon} alt="Github" />
 						</a>
 					</div>

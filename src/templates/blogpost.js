@@ -1,25 +1,23 @@
 import React from "react";
+import Layout from "../components/Layout";
+import SEO from "../components/SEO";
 import { graphql } from "gatsby";
 import { format } from "date-fns";
-import Layout from "../components/Layout";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { container, img_container } from "../styles/post.module.css";
 
 export default function blogpost({ data }) {
-	const featuredImage = getImage(data.markdownRemark.frontmatter.featuredimage);
+	const blogData = data.markdownRemark.frontmatter;
+	const featuredImage = getImage(blogData.featuredimage);
 	return (
 		<Layout>
+			<SEO title={blogData.title} />
 			<div className={container}>
-				<h2>{data.markdownRemark.frontmatter.title}</h2>
-				<p>
-					{format(
-						new Date(data.markdownRemark.frontmatter.date),
-						"MMM, d yyyy"
-					)}
-				</p>
+				<h2>{blogData.title}</h2>
+				<p>{format(new Date(blogData.date), "MMM, d yyyy")}</p>
 				<GatsbyImage
 					image={featuredImage}
-					alt={data.markdownRemark.frontmatter.title + " picture"}
+					alt={blogData.title + " picture"}
 					className={img_container}
 				/>
 				<div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />

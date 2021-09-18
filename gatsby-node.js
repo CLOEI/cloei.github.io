@@ -23,6 +23,23 @@ exports.createPages = async ({ graphql, actions }) => {
 			context: { slug: node.fields.slug },
 		});
 	});
+
+	const posts = data.allMarkdownRemark.edges;
+	const postsPerPage = 5;
+	const numPages = Math.ceil(posts.length / postsPerPage);
+
+	Array.from({ length: numPages }).forEach((_, i) => {
+		actions.createPage({
+			path: i === 0 ? "/" : `/${i + 1}`,
+			component: path.resolve("./src/templates/bloglist.js"),
+			context: {
+				limit: postsPerPage,
+				skip: i * postsPerPage,
+				numPages,
+				currentPage: i + 1,
+			},
+		});
+	});
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

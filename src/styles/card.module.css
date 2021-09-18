@@ -7,7 +7,7 @@
 	min-height: 160px;
 	width: 95%;
 	margin: 1rem auto;
-	transition: all 0.2s;
+	transition: 0.2s;
 }
 .image {
 	flex-shrink: 0;
@@ -19,6 +19,15 @@
 .card_title {
 	font-size: 1.3rem;
 	font-weight: 600;
+}
+.image_class {
+	border-radius: 8px 0 0 8px !important;
+}
+.container:hover {
+	padding: 10px;
+}
+.container:hover .image_class {
+	border-radius: 8px !important;
 }
 
 @media only screen and (min-width: 768px) {
