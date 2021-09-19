@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import Card from "../components/Card";
@@ -10,15 +10,19 @@ import {
 } from "../styles/section.module.css";
 import "../styles/index.css";
 
-export default function bloglist({ data, pageContext }) {
+export default function Bloglist({ data, pageContext }) {
+	const [active, setactive] = useState("Blog");
 	const { numPages, currentPage } = pageContext;
 	return (
 		<Layout>
 			<SEO />
 			<div className={container}>
 				<div className={section_switcher}>
-					<div className={section}>
+					<div className={`${section} ${active === "Blog" && "active"}`}>
 						<p>Blog</p>
+					</div>
+					<div className={`${section} ${active === "Project" && "active"}`}>
+						<p>Projects</p>
 					</div>
 				</div>
 				<div>
@@ -30,7 +34,6 @@ export default function bloglist({ data, pageContext }) {
 								imgSrc={val.node.frontmatter.featuredimage}
 								slug={val.node.fields.slug}
 								date={val.node.frontmatter.date}
-								tags={val.node.frontmatter.tags}
 							/>
 						);
 					})}

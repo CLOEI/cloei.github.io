@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery, Link } from "gatsby";
+import { Link } from "gatsby";
 import React from "react";
 import {
 	profile_container,
@@ -6,48 +6,29 @@ import {
 	profile_img,
 	container,
 } from "../styles/profile.module.css";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { StaticImage } from "gatsby-plugin-image";
 
 export default function Profile() {
-	const data = useStaticQuery(graphql`
-		query MyQuery {
-			profileImage: file(relativePath: { eq: "profile.jpg" }) {
-				childImageSharp {
-					gatsbyImageData(
-						width: 100
-						placeholder: BLURRED
-						formats: [AUTO, WEBP, AVIF]
-					)
-				}
-			}
-			githubIcon: file(relativePath: { eq: "github.png" }) {
-				childImageSharp {
-					gatsbyImageData(
-						width: 32
-						placeholder: BLURRED
-						formats: [AUTO, WEBP, AVIF]
-					)
-				}
-			}
-		}
-	`);
-	const userProfile = getImage(data.profileImage);
-	const githubIcon = getImage(data.githubIcon);
 	return (
 		<div className={container}>
 			<h1>Cendy</h1>
 			<div className={profile_container}>
 				<Link to="/">
-					<GatsbyImage
-						image={userProfile}
-						alt="User profile"
+					<StaticImage
+						src="../img/profile.jpg"
+						alt="User Profile"
 						className={profile_img}
+						placeholder="blurred"
 					/>
 				</Link>
 				<div className={button_container}>
 					<div>
 						<a href="https://github.com/CLOEI" target="_blank" rel="noreferrer">
-							<GatsbyImage image={githubIcon} alt="Github" />
+							<StaticImage
+								src="../img/github.png"
+								alt="Github"
+								placeholder="blurred"
+							/>
 						</a>
 					</div>
 				</div>

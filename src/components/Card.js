@@ -23,7 +23,7 @@ function Card({ title, imgSrc, slug, date }) {
 			/>
 			<div className={text_container}>
 				<p>{format(new Date(date), "MMM, d yyyy")}</p>
-				<p className={card_title}>{title}</p>
+				<h2 className={card_title}>{title}</h2>
 			</div>
 		</Link>
 	);

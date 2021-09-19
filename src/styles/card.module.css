@@ -1,8 +1,8 @@
 .container {
 	display: flex;
-	background-color: #374151;
+	background-color: #1f2937;
 	text-decoration: none;
-	color: #f9fafb;
+	color: #e5e7eb;
 	border-radius: 8px;
 	min-height: 160px;
 	width: 95%;
@@ -16,10 +16,6 @@
 .text_container {
 	padding: 1rem 0.4rem;
 }
-.card_title {
-	font-size: 1.3rem;
-	font-weight: 600;
-}
 .image_class {
 	border-radius: 8px 0 0 8px !important;
 }
@@ -31,6 +27,9 @@
 }
 
 @media only screen and (min-width: 768px) {
+	.container {
+		width: 100%;
+	}
 	.image {
 		width: 150px;
 	}

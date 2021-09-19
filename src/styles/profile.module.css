@@ -27,11 +27,12 @@
 
 .profile_img {
 	border-radius: 50%;
+	width: 100px;
 	flex-shrink: 0;
 }
 .container > h1 {
 	text-align: center;
-	margin-top: 1rem;
+	margin-bottom: 1.5rem;
 }
 .container > p {
 	padding: 0 1rem;

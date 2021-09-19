@@ -1,12 +1,9 @@
-.container {
-	margin-top: 1rem;
-}
 .section_switcher {
-	background-color: #374151;
 	height: 40px;
-	border-radius: 8px;
+	border-radius: 12px;
 	width: max-content;
 	margin: 0 auto 1rem auto;
+	background-color: #1f2937;
 }
 
 .section {
@@ -15,6 +12,10 @@
 	color: #f9fafb;
 	text-decoration: none;
 	text-align: center;
-	line-height: 40px;
 	cursor: pointer;
+	border-radius: 12px;
+	line-height: 40px;
+}
+.section:hover {
+	background-color: #374151;
 }
