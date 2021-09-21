@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
-import Card from "../components/Card";
+import BlogCard from "../components/BlogCard";
 import { graphql, Link } from "gatsby";
 import {
 	container,
@@ -11,32 +11,43 @@ import {
 import "../styles/index.css";
 
 export default function Bloglist({ data, pageContext }) {
-	const [active, setactive] = useState("Blog");
+	const [active, setActive] = useState("Blog");
 	const { numPages, currentPage } = pageContext;
+
 	return (
 		<Layout>
 			<SEO />
 			<div className={container}>
 				<div className={section_switcher}>
-					<div className={`${section} ${active === "Blog" && "active"}`}>
+					<div
+						className={`${section} ${active === "Blog" && "active"}`}
+						onClick={() => setActive("Blog")}
+					>
 						<p>Blog</p>
 					</div>
-					<div className={`${section} ${active === "Project" && "active"}`}>
+					<div
+						className={`${section} ${active === "Projects" && "active"}`}
+						onClick={() => setActive("Projects")}
+					>
 						<p>Projects</p>
 					</div>
 				</div>
 				<div>
-					{data.allMarkdownRemark.edges.map((val) => {
-						return (
-							<Card
-								title={val.node.frontmatter.title}
-								key={val.node.id}
-								imgSrc={val.node.frontmatter.featuredimage}
-								slug={val.node.fields.slug}
-								date={val.node.frontmatter.date}
-							/>
-						);
-					})}
+					{active === "Blog" ? (
+						data.blog.edges.map((val) => {
+							return (
+								<BlogCard
+									title={val.node.frontmatter.title}
+									key={val.node.id}
+									imgSrc={val.node.frontmatter.featuredimage}
+									slug={val.node.fields.slug}
+									date={val.node.frontmatter.date}
+								/>
+							);
+						})
+					) : (
+						<p> Masih dalam tahap pembangunan </p>
+					)}
 				</div>
 				<div>
 					{Array.from({ length: numPages }).forEach((_, i) => {
@@ -52,7 +63,8 @@ export default function Bloglist({ data, pageContext }) {
 
 export const query = graphql`
 	query blogListQuery($skip: Int!, $limit: Int!) {
-		allMarkdownRemark(
+		blog: allMarkdownRemark(
+			filter: { fileAbsolutePath: { regex: "/blog/" } }
 			sort: { fields: frontmatter___date, order: DESC }
 			limit: $limit
 			skip: $skip
