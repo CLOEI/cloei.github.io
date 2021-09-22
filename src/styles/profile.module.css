@@ -42,7 +42,7 @@
 	.container {
 		max-width: 300px;
 		position: sticky;
-		top: 0;
+		top: 2rem;
 		align-self: start;
 	}
 	.container > h1 {
