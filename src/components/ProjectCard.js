@@ -1,13 +1,29 @@
-import React from 'React';
-import { StaticImage } from 'gatsby-plugin-image'
+import React from "react";
+import Tag from "../components/Tag";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { container } from "../styles/projectcard.module.css";
 
-function ProjectCard({children, title, desc}){
-    return (
-        <div>
-            <p>{ title }</p>
-            <p>{ desc }</p> 
-        </div>
-    )
+function Projectcard({ title, imgSrc, shortDesc, tags, link }) {
+	const imgData = getImage(imgSrc);
+	return (
+		<div className={container}>
+			<a href={link} target="_blank" rel="noreferrer">
+				<GatsbyImage
+					image={imgData}
+					alt={title}
+					style={{ height: "190px" }}
+					imgStyle={{ borderRadius: "8px 8px 0 0" }}
+				/>
+			</a>
+			<div>
+				<h2>{title}</h2>
+				<p>{shortDesc}</p>
+				{tags.map((val) => {
+					return <Tag name={val} />;
+				})}
+			</div>
+		</div>
+	);
 }
 
-export default ProjectCard;
+export default Projectcard;
