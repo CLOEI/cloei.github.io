@@ -1,35 +1,36 @@
 module.exports = {
 	siteMetadata: {
-		title: "Cendy",
+		title: 'Cendy',
 		description:
-			"Website portfolio dan blog kecil yang digunakan untuk mencatat progress",
-		author: "Cendy",
+			'Website portfolio dan blog kecil yang digunakan untuk mencatat progress',
+		author: 'Cendy',
 	},
 	plugins: [
-		"gatsby-plugin-react-helmet",
+		'gatsby-plugin-sass',
+		'gatsby-plugin-react-helmet',
 		{
-			resolve: "gatsby-source-filesystem",
+			resolve: 'gatsby-source-filesystem',
 			options: {
-				name: "images",
+				name: 'images',
 				path: `${__dirname}/src/img/`,
 			},
 		},
 		{
-			resolve: "gatsby-source-filesystem",
+			resolve: 'gatsby-source-filesystem',
 			options: {
-				name: "blog",
+				name: 'blog',
 				path: `${__dirname}/src/pages/blog/`,
 			},
 		},
 		{
-			resolve: "gatsby-source-filesystem",
+			resolve: 'gatsby-source-filesystem',
 			options: {
-				name: "blog",
+				name: 'blog',
 				path: `${__dirname}/src/pages/projects/`,
 			},
 		},
 		`gatsby-transformer-sharp`,
-		"gatsby-plugin-image",
+		'gatsby-plugin-image',
 		`gatsby-plugin-sharp`,
 		{
 			resolve: `gatsby-transformer-remark`,
@@ -38,7 +39,7 @@ module.exports = {
 					{
 						resolve: `gatsby-remark-relative-images`,
 						options: {
-							staticFolderName: "src",
+							staticFolderName: 'src',
 						},
 					},
 					{
@@ -48,6 +49,14 @@ module.exports = {
 				],
 			},
 		},
-		"gatsby-plugin-netlify-cms",
+		{
+			resolve: 'gatsby-plugin-react-svg',
+			options: {
+				rule: {
+					include: /\.inline\.svg$/,
+				},
+			},
+		},
+		'gatsby-plugin-netlify-cms',
 	],
 };

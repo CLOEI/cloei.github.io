@@ -1,41 +1,33 @@
-import { Link } from "gatsby";
-import React from "react";
-import {
-	profile_container,
-	button_container,
-	profile_img,
-	container,
-} from "../styles/profile.module.css";
-import { StaticImage } from "gatsby-plugin-image";
+import { Link } from 'gatsby';
+import React from 'react';
+import { StaticImage } from 'gatsby-plugin-image';
+import GithubIcon from '../img/github.inline.svg';
 
 export default function Profile() {
 	return (
-		<div className={container}>
+		<div className="profile-container">
 			<h1>Cendy</h1>
-			<div className={profile_container}>
+			<div>
 				<Link to="/">
 					<StaticImage
 						src="../img/profile.jpg"
+						layout="constrained"
+						width={150}
+						height={150}
 						alt="User Profile"
-						className={profile_img}
 						placeholder="blurred"
+						className="static-image"
 					/>
 				</Link>
-				<div className={button_container}>
+				<div className="profile-icon">
 					<div>
-						<a href="https://github.com/CLOEI" target="_blank" rel="noreferrer">
-							<StaticImage
-								src="../img/github.png"
-								alt="Github"
-								placeholder="blurred"
-							/>
-						</a>
+						<GithubIcon />
 					</div>
 				</div>
 			</div>
 			<p>
-				Saya masih seorang pelajar dan hobi saya sendiri adalah mengembangkan
-				web dan setiap hari saya menghabiskan waktu untuk memperdalam hobi saya.
+				Just an ordinary high school student who has a dream to become a{' '}
+				<span>web developer</span>.
 			</p>
 		</div>
 	);

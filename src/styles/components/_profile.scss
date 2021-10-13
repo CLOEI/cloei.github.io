@@ -1,0 +1,37 @@
+.profile-container {
+	color: #f5f5f5;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 17px;
+	h1 {
+		font-family: 'Catamaran', sans-serif;
+		font-size: 32px;
+	}
+	& > div {
+		margin: 17px 0;
+		display: flex;
+		.static-image {
+			border-radius: 50%;
+		}
+		.profile-icon {
+			width: 30px;
+			height: 30px;
+			background-color: #f5f5f5;
+			border-radius: 50%;
+			align-self: flex-end;
+			margin-bottom: 20px;
+			svg {
+				color: black;
+			}
+		}
+	}
+	p {
+		font-family: 'Trirong', serif;
+		font-size: 1rem;
+		line-height: 27.74px;
+		span {
+			color: #48c774;
+		}
+	}
+}

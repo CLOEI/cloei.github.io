@@ -1,15 +1,14 @@
-import React from "react";
-import Profile from "./Profile";
-import { container } from "../styles/layout.module.css";
+import React from 'react';
+import Profile from './Profile';
+import { StaticImage } from 'gatsby-plugin-image';
+import '../styles/main.scss';
 
 function Layout({ children }) {
 	return (
-		<>
-			<div className={container}>
-				<Profile />
-				{children}
-			</div>
-		</>
+		<div className="layout-container">
+			<Profile />
+			{children}
+		</div>
 	);
 }
 

@@ -1,29 +1,17 @@
-import React from "react";
-import { format } from "date-fns";
-import { Link } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import {
-	container,
-	text_container,
-	image,
-	card_title,
-	image_class,
-} from "../styles/card.module.css";
+import React from 'react';
+import { format } from 'date-fns';
+import { Link } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { motion } from 'framer-motion';
 
 function Card({ title, imgSrc, slug, date }) {
 	const imgData = getImage(imgSrc);
 	return (
-		<Link to={slug} className={container}>
-			<GatsbyImage
-				image={imgData}
-				alt={title}
-				className={image}
-				objectPosition="10% 50%"
-				imgClassName={image_class}
-			/>
-			<div className={text_container}>
-				<p>{format(new Date(date), "MMM, d yyyy")}</p>
-				<h2 className={card_title}>{title}</h2>
+		<Link to={slug} className="blogcard-container">
+			<GatsbyImage image={imgData} alt={title} />
+			<div className="blogcard-info">
+				<p>{format(new Date(date), 'MMM, d yyyy')}</p>
+				<h2>{title}</h2>
 			</div>
 		</Link>
 	);
