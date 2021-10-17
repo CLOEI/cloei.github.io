@@ -1,3 +1,16 @@
 .blogcard-container {
 	display: block;
+	text-decoration: none;
+	color: #000;
+	background-color: #f5f5f5;
+	margin-bottom: 14px;
+	h2 {
+		font-weight: bold;
+	}
+	p {
+		font-style: italic;
+	}
+	.wrapper {
+		width: 100%;
+	}
 }

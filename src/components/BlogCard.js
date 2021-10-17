@@ -8,10 +8,15 @@ function Card({ title, imgSrc, slug, date }) {
 	const imgData = getImage(imgSrc);
 	return (
 		<Link to={slug} className="blogcard-container">
-			<GatsbyImage image={imgData} alt={title} />
+			<GatsbyImage
+				image={imgData}
+				alt={title}
+				objectFit="cover"
+				className="wrapper"
+			/>
 			<div className="blogcard-info">
-				<p>{format(new Date(date), 'MMM, d yyyy')}</p>
 				<h2>{title}</h2>
+				<p>{format(new Date(date), 'MMM, d yyyy')}</p>
 			</div>
 		</Link>
 	);

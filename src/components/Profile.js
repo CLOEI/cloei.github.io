@@ -17,6 +17,7 @@ export default function Profile() {
 						alt="User Profile"
 						placeholder="blurred"
 						className="static-image"
+						backgroundColor="#f5f5f5"
 					/>
 				</Link>
 				<div className="profile-icon">
